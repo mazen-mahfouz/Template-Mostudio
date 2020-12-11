@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mostudio</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="import-all.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  </head>
+  <body>
+
+    <div id="nav" onclick="side_bar()">
+      <li class="bar"></li>
+    </div>
+
+    <div id="side-bar">
+
+        <h1><a href="#">Mostudio</a></h1>
+
+        <ul>
+          <li><a id="topc-site" href="#">HOME</a></li>
+          <li><a href="#">GALLERY</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PRICING</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div id="conn-bottom-side">
+          <h4>Subscribe for newsletter</h4>
+          <input type="text" placeholder="Enter Email Address">
+          <p>Copyright ©2020 All rights reserved | This template is made with by</p>
+          <span><a href="#">Colorlib.com</a></span>
+        </div>
+    </div>
+    <div id="img-reviw">
+      <li class="close" onclick="left_and_right('close')"></li>
+      <i class="fas fa-caret-left" id="left" onclick="left_and_right('left')"></i>
+      <i class="fas fa-caret-right" id="right" onclick="left_and_right('right')"></i>
+      <div id="conn-img"></div>
+      <span></span>
+    </div>
+
+  <div id="footer"><a href="#">load more <i class="fas fa-sync-alt"></i></a></div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

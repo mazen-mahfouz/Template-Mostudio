@@ -1,0 +1,39 @@
+
+@import "scss/varebols/varebols.scss";
+
+*{
+  box-sizing: border-box; 
+}
+
+body{
+    @extend %margANDpadd;
+    background-color: $back-body;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+ul{
+    @extend %margANDpadd;
+    list-style: none;
+}
+
+a{
+    text-decoration: none; 
+}
+
+button{
+    background: none;
+    border:0;
+}
+
+%margANDpadd{
+    margin: 0;
+    padding: 0;
+}
+
+@for $i from 1 through 6 {
+    h#{$i}{
+        @extend %margANDpadd;
+    }
+}

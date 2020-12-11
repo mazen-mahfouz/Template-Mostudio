@@ -1,0 +1,161 @@
+
+@import "scss/varebols/varebols.scss";
+
+#nav{
+    position: fixed;
+    top: 27px;
+    left: 10px;
+    z-index: 9999;
+    transition: .5s;
+
+    .bar{
+        @extend %bar_style;
+    }
+
+    %bar_style{
+        background-color: white;
+        width: 20px;
+        height: 2px;
+        transition: .5s;
+    }
+
+    @mixin bar-afandbe ($bandf,$type_position, $position){
+        .bar::#{$bandf} {
+            content: "";
+            position: absolute;
+            @extend %bar_style;
+            #{$type_position}: #{$position};
+        }    
+    }
+
+    @include bar-afandbe(before, top, -8px);
+    @include bar-afandbe(after, bottom, -8px);
+
+    @mixin bar-afandbe2 ($bandf,$type_position, $position, $rotat){
+        .bar2::#{$bandf} {
+            content: "";
+            position: absolute;
+            @extend %bar_style;
+            #{$type_position}: #{$position};
+            background-color: white;
+            transform: rotate(#{$rotat});
+        }    
+    }
+
+    @include bar-afandbe2(before, top, 0px, -45deg);
+    @include bar-afandbe2(after, top, 0px, 45deg);
+
+}
+
+#side-bar{
+    width: 270px;
+    background: url(img/img3.png) no-repeat right top #000 !important;
+    height: 100vh;
+    text-align: center;
+    margin-left: -#{$width-bar-side};
+    transition: .5s;
+    position: fixed;
+    z-index: 99;
+
+    h1{
+        transform: translate(1px, 16px);
+        font-weight: 100;
+        z-index: -20;
+        
+        a{
+            color: transparent;
+            font-family: $font-family;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: url(img/logo.jpg);
+            font-size: calc(var(--fontSize) + 2.23rem);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            text-transform: none;
+        }
+    }
+
+    li{
+        text-align: left;
+        transform: translate($padding-left-Sbar - 4,28.5px);
+        font-size: var(--fontSize);
+        margin-bottom: 5.5%;
+        letter-spacing: 1.5px; 
+
+        #topc-site{
+            color: $colorMain;
+            border-bottom: 2px solid $colorMain;
+            padding-bottom: 2px;
+        }
+
+          a{
+            color: nth($colorMain2, 8);
+            position: relative;
+
+            &::after{
+                background-color: #f3c623;
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                height: 2px;
+                padding-left: 0px;
+                transition: .2s;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:hover{
+                color: $colorMain;
+                &::after{
+                    padding-left: 100%;
+                }
+            }
+          }
+    }
+
+    #conn-bottom-side{
+        position: absolute;
+        bottom: 30px;
+
+        h4{
+            color: nth($colorMain2, 5);
+            margin-top: 62.5%;
+            font-size: calc(var(--fontSize) + 0.03rem);
+            margin-left: -3px;
+        }
+
+        input{
+            background: none;
+            border: 1px solid nth($colorMain2 , 1);
+            padding: 18px 0px 17px 15px;
+            margin-top: 7px;
+            font-size: calc(var(--fontSize) - .02rem);
+            width: 76%;
+            letter-spacing: 1px;
+            color: nth($colorMain2 , 1)
+        }
+        
+        p{
+            color: rgba(255, 255, 255, 0.2);
+            text-align: left;
+            transform: translate($padding-left-Sbar, 9px);
+            width: 76%;
+            font-size: calc(var(--fontSize) - .01rem);
+            line-height: 1.8;
+            text-transform: none;
+        }
+
+        span{
+            float: left;
+            transform: translate($padding-left-Sbar, -6px);
+
+            a{
+                color: nth($colorMain2 , 7); 
+                font-size: calc(var(--fontSize) - 0.12rem);
+                letter-spacing: 1px;
+                text-transform: none;
+            }
+        }
+    }
+}
